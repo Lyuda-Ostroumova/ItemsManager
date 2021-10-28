@@ -1,6 +1,11 @@
-package ru.netology.products;
+package ru.netology.repository;
+
+import ru.netology.products.Book;
+import ru.netology.products.Product;
+import ru.netology.products.Smartphone;
 
 public class ProductsRepository {
+
 
     private Product[] products = new Product[0];
 

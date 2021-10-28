@@ -1,4 +1,9 @@
-package ru.netology.products;
+package ru.netology.manager;
+
+import ru.netology.products.Book;
+import ru.netology.products.Product;
+import ru.netology.repository.ProductsRepository;
+import ru.netology.products.Smartphone;
 
 public class Manager {
     private ProductsRepository repository;
@@ -10,23 +15,9 @@ public class Manager {
     public void add(Product product) {
         repository.add(product);
     }
-    public void getAll() {repository.getAll(); }
-
-    Product one = new Book(1, "Гарри Поттер и Философский камень", 674, "Джоан Роулинг");
-    Product two = new Book(2, "Гарри Поттер и Тайная комната", 700, "Джоан Роулинг");
-    Product three = new Book(3, "Гарри Поттер и Орден феникса", 800, "Джоан Роулинг");
-    Product four = new Smartphone(6, "Sony Xperia I", 99_000, "Sony");
-    Product five = new Smartphone(12, "Huawei Nova 5T", 25_000, "Huawei");
-    Product six = new Smartphone(7, "iPhone 12", 69_000, "Apple");
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-        repository.add(one);
-        repository.add(two);
-        repository.add(three);
-        repository.add(four);
-        repository.add(five);
-        repository.add(six);
         for (Product product : repository.getAll()) {
             if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
